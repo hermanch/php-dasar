@@ -16,6 +16,10 @@ echo "kjdjsds";
 	<hr>
 	<h2>Type data number</h2>
 	<a href="./TypeDataNumber.php ">Type Data Number</a>
+	<br>
+	<a href="./TypeDataBool.php ">Type Data Bool</a>
+	<br>
+	<a href="./TypeDataString.php ">Type Data String</a>
 	<hr>
 
 </body>
