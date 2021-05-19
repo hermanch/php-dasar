@@ -1,5 +1,5 @@
 # Belajar PHP Dasar
-Belajar kali ini kita tidak membutuhkan web browser untuk membuka file php tersebut, melainkan menjalankan di terminal.
+Belajar kali ini kita tidak membutuhkan web browser untuk membuka file php tersebut, melainkan menjalankan di *terminal*.
 
 ## File Php
 1. File php dibuat dengan extension `.php` .
@@ -54,4 +54,26 @@ Ketika membuat sebuah tipe data string kita bisa menggunakan cara _heredoc_ _now
 	t;
 ?> 
 ```
-_nowdoc- tidak bisa memparsing data variable
+_nowdoc_ tidak bisa memparsing data variable
+***Silahkan buka file*** `TypeDataString.php`
+
+## Variable
+- Variable merupakan untukk menyinpan data sehingga kita dapat menggunbakan lagi kode programnya.
+- Data dari nilai variable tersebut dapat berubah, misalkan dari _string_ bisa dibah ke _integer_.
+- Dimulai dengan tanda $ (dolar) kemudian diikuti nama variable `$var = "string"`.
+- Tidak boleh mengandung _spasi_ di variablenya ~$var able = "string"~.
+
+
+###  Variable Variables
+Membuat nama variabel dari nilai variable, fitur ini sangat membingungkan saat mode development nanti, jadi tidak disarankan menggunakan jika tidak diperlukan.
+Penggunaan sintak ini meggunakan tanda dolar 2 kali `$$` . Contoh:
+```php
+<?php
+$name = 'han';
+$$name = 'hanasa';
+
+?>
+```
+`$$name` itu sebenarnya `$han`
+
+***Silahkan buka file*** `variabel.php`
