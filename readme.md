@@ -83,3 +83,12 @@ contoh sintak
 define('NAMA_VAR', 'STRING');
 echo NAMA_VAR;
 ```
+
+## Null
+Nilai `NULL` merepresentasikan sebuah variable tanpa nilai, kita bisa menggunakan `null` untuk menghapus data sebuah variable, `NULL` sendiri bersifat _case insesitive_ atau boleh kapital boleh huruf kecil tulisannya.
+```php
+$name = "Hanasa";
+$name = null;
+
+echo "Name : $name";
+```
