@@ -92,3 +92,41 @@ $name = null;
 
 echo "Name : $name";
 ```
+
+### mengecek data null atau tidak
+Kadang kita ingin menegcek apakah data tersebut kosong alias `null`, kita bisa meggunakan function `is_null($var)` dan hasilnya `boolean`
+```php
+$name = null;
+echo is_null($name); // 1 atau true
+```
+
+### Menghapus Variable
+Selain bisa menghapus nilai dari variable, `php` juga bisa menghapus variable itu sendiri dengan function `unset($var)`
+```php
+$age = 23;
+unset($age);
+
+echo $age; //error karena sudah dihapus
+```
+
+### Mengecel variable
+Untuk mengecek variabel apakah ada dan ada nilainya (tidak `null`) kita bisa menggunakan function `isset($var)`
+```php
+$age = 23;
+$age = null;
+isset($age); //false
+
+$age = "24";
+isset($age); //true
+```
+
+## Array
+Tipe data ini bisa menampung beberapa jenis data dalam satu variable. Bisa itu int, str, bool.
+### Operasi Array
+|Operasi| Keterangan|
+| ---- | -----|
+|$array[index] | Mengakses data di array pada nomor index |
+|$array[index] = value | Mengubah data di array pada nomor index dengan value baru |
+|$array[] = value | Menambah data array|
+|unset($array[index]) | menghapus data di array, index otomatis hilang|
+|count($array) | menghitung jumlah data pada array |
