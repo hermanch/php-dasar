@@ -20,6 +20,10 @@ echo "kjdjsds";
 	<a href="./TypeDataBool.php ">Type Data Bool</a>
 	<br>
 	<a href="./TypeDataString.php ">Type Data String</a>
+	<br>
+	<a href="./variabel.php ">variable</a>
+	<br>
+	<a href="./Constant.php ">Constant</a>
 	<hr>
 
 </body>

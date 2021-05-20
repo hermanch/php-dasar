@@ -68,12 +68,18 @@ _nowdoc_ tidak bisa memparsing data variable
 Membuat nama variabel dari nilai variable, fitur ini sangat membingungkan saat mode development nanti, jadi tidak disarankan menggunakan jika tidak diperlukan.
 Penggunaan sintak ini meggunakan tanda dolar 2 kali `$$` . Contoh:
 ```php
-<?php
 $name = 'han';
 $$name = 'hanasa';
 
-?>
 ```
 `$$name` itu sebenarnya `$han`
 
 ***Silahkan buka file*** `variabel.php`
+
+## Constant
+Kata lain dari variable yang mana nilai tidak bisa dirubah _(immutable)_ dan disranakn dalam best practicenya menggunakan capital _(UPPER_CASE)_
+contoh sintak
+```php
+define('NAMA_VAR', 'STRING');
+echo NAMA_VAR;
+```
