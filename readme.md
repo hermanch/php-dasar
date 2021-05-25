@@ -109,7 +109,7 @@ unset($age);
 echo $age; //error karena sudah dihapus
 ```
 
-### Mengecel variable
+### Mengecek variable
 Untuk mengecek variabel apakah ada dan ada nilainya (tidak `null`) kita bisa menggunakan function `isset($var)`
 ```php
 $age = 23;
@@ -130,3 +130,50 @@ Tipe data ini bisa menampung beberapa jenis data dalam satu variable. Bisa itu i
 |$array[] = value | Menambah data array|
 |unset($array[index]) | menghapus data di array, index otomatis hilang|
 |count($array) | menghitung jumlah data pada array |
+
+### Array map
+Ketika kita membuat array nilai dari array tersebut mempunyai nilai yang berhubungan yaitu key dan value, key didalam sebuah array secara default berupa anggak dimulai dari 0, tetapi di php kita bisa membuat sesuai yang kita inginkan pada key-nya.
+
+```php
+$name = [
+	"id" => "IDXuy56",
+	"name" => "Hanasa",
+	"address" => [
+		"city" => "Ciamis",
+		 "country" => "Indonesia"
+	]
+]
+```
+
+## Aritmatika
+|Operator | Keterangan |
+|---------| -------------|
+| +$var | Positif |
+| -$var | Negatif |
+| $vara + $varb | Penambahan |
+| $vara - $varb | Pengurangan |
+| $vara * $varb | Perkalian |
+| $vara / $varb | Pembagian |
+| $vara % $varb | Faktorial atau sisa bagi |
+| $vara ** $varb | Perpangkatan |
+
+### Penugasan Pada Aritmatika
+|Operator | Keterangan |
+|---------| -------------|
+| $a += $b | $a = $a + $b |
+| $a -= $b | $a = $a - $b |
+| $a *= $b | $a = $a * $b |
+| $a %= $b | $a = $a % $b |
+| $a /= $b | $a = $a / $b |
+
+
+```php
+$total = 0;
+$buah = 12000;
+$sayuran = 23000;
+
+$total += $buah;
+$total += $sayuran;
+
+echo $total; //35000;
+```
