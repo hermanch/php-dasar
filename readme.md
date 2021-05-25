@@ -177,3 +177,54 @@ $total += $sayuran;
 
 echo $total; //35000;
 ```
+
+## Operator Logika
+|Operator | Nama | Hasil |
+|---------|------|-------|
+|$a && $b | And | _true_ Jika $a dan $b keduanya _true_ |
+|$a and $b | And | _true_ Jika $a dan $b keduanya _true_ |
+|$a \|\| $b | Or | _true_ Jika $a dan $b salah satunya _true_ |
+|$a or $b | Or | _true_ Jika $a dan $b salah satunya _true_ |
+|!$a  | Not | _true_ Jika $a berniai _false_ atau disebut kebalikan |
+|$a Xor $b | Xor | _true_ Jika  $a dan $b salah satunya _true_, tapi tidak keduanya|
+
+```php
+var_dump(true && true); //true
+var_dump(true && false); //false
+```
+
+## Operator Perbandingan
+|Operator | Nama | Keterangan |
+|---------|------|-------|
+|$a !== $b | Tidak Identik | _true_ jika $a dan $b tidak sama dengan atau tidak sama tipe data |
+|$a < $b | Kurang Dari | _true_ jika $a kurang dari $b |
+|$a <= $b | Kurang dari atau sama dengan | _true_ jika $a kurang dari atau sama dengan dari $b|
+|$a > $b | Lebih Dari | _true_ jika $a lebih dari $b |
+|$a >= $b | Lebih dari atau sama dengan | _true_ jika $a lebih dari atau sama dengan dari $b|
+
+```php
+var_dump(10 !== "10"); //true
+var_dump(10 == 10); //true
+var_dump("10" == 10); //true
+
+```
+
+## Operator Increment dan Decrement
+|Operator | Nama | Keterangan |
+|---------|------|-------|
+|$a++ | Post Increment | Kembalikan $a lalu naikkan 1 |
+|++$a | Pre Increment | naikan 1 lalu kembalika $a|
+|$a-- | Post Decrement | Kembalikan $a lalu turunkan 1 |
+|++$a | Pre Decrement | turunkan 1 lalu kembalika $a|
+
+```php
+$a = 2;
+$c = $a++;
+echo $c; // 2
+
+```
+Maksud dari hasil dari c menjadi 2 bukan 3 adalah karena sintaknya bisa sama seperti:
+```php
+$c = $a; //$a simpan ke $c
+$a = $a + 1 //kemudian
+```
