@@ -22,4 +22,30 @@ $name = [
 ];
 var_dump($name[id]); //"IDXuy56"
 var_dump($name[address][country]); //"Indonesia" => nested array
+
+
+//operator array
+$first = [
+	"first" => "Han Han"
+];
+$last = [
+	"first" => "Sofari", 
+	"last" => "Hanasa"
+];
+$full = $first + $last;
+
+var_dump($full);
+
+$nasi = [
+	"first" => "beras",
+	"last" => "air"
+];
+
+$leupeut = [
+	"last" => "air",
+	"first" => "beras"
+];
+
+var_dump($nasi == $leupeut); //true
+var_dump($nasi === $leupeut); //false
  ?>

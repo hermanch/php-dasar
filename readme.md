@@ -162,7 +162,7 @@ $name = [
 |---------| -------------|
 | $a += $b | $a = $a + $b |
 | $a -= $b | $a = $a - $b |
-| $a *= $b | $a = $a * $b |
+| $a *\= $b | $a = $a * $b |
 | $a %= $b | $a = $a % $b |
 | $a /= $b | $a = $a / $b |
 
@@ -227,4 +227,39 @@ Maksud dari hasil dari c menjadi 2 bukan 3 adalah karena sintaknya bisa sama sep
 ```php
 $c = $a; //$a simpan ke $c
 $a = $a + 1 //kemudian
+```
+## Operator Array
+|Operator | Nama | Keterangan |
+|---------|------|-------|
+|$a + $b| Union | Menggabungkan array $a + $b|
+|$a == $b| Equality | `true` jika $a dan $b memiliki key-value sama| 
+|$a === $b| Identity | `true` jika $a dan $b memiliki key-value sama dan posisi sama | 
+|$a != $b| Inequality | `true` jika $a dan $b tidak sama|
+|$a <> $b| Inequality | `true` jika $a dan $b tidak sama|
+|$a !== $b| Nonidentity | `true` jika $a dan $b tidak identik|
+
+***Contoh***
+```php
+$first = [
+	"first" => "Han Han" // sama
+];
+$last = [
+	"first" => "Sofari", //bentrok / sama
+	"last" => "Hanasa"
+];
+$full = $first + $last;
+
+var_dump($full); 
+
+```
+
+jika itu bentrok _key_ nya dengan variable sebelumnya maka nilainya akan diabaikan dan hasilnya akan menjadi seperti ini:
+```bash
+//result
+array(2) {
+  'first' =>
+  string(7) "Han Han"
+  'last' =>
+  string(6) "Hanasa"
+}
 ```
