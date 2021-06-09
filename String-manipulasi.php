@@ -18,4 +18,9 @@ var_dump($valueFloat);
 
 var_dump((int)"string");
 
+echo $name[2] . PHP_EOL;
+
+$myDonut = "Donut";
+echo "i have 3 {$myDonut}'s" .PHP_EOL;
+
  ?>

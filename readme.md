@@ -263,8 +263,8 @@ array(2) {
   string(6) "Hanasa"
 }
 ```
-
-## Dot Operator
+## Manipulasi String
+### Dot Operator
 Ini digunakan untuk menambahkan antara `string` dengan type data yang lain, sebenarnya bisa saja menggunakan tanda plus (+) tetapi tidak disarankan karean tanda plus (+) hanya dignakan untuk operasi matematika. Seperti Contoh berikut:
 ```php
 $name = "Hanasa";
@@ -276,11 +276,30 @@ echo "nilai tugas: ". $nilai . PHP_EOL;
 
 _Catatan_ : `PHP_EOL` => kependekan dari *PHP End Of Line* sintak pengganti `"\n"` untuk membuat garis baru.
 
-## Mengganti type data
+### Mengganti type data
 Terkadang kita mau mengubah type data dari inputan user misalkan user meninput data dengan type string "100" kita harus mengubahnya ke type number (int/float), kita cukup menggunakan dengan formula `(typedata)value` contoh:
 ```php
 $valueStr = (string)100;
 var_dump($valueStr); // string(3) "100"
+
+$valueName = (int)"Hanasa";
+var_dump($valueName); // int(0)
 ```
 
 Kalau kita mengubah nilai yang salah, misal dari `(int)"Hanasa"` maka mengembalikan `int(0)`
+
+### Mengakses Karakter
+Untuk mengakses karakter sama seperti array menggunakan kurung siku dan indexnya dimulai dari 0.
+```php
+$name = "Hanasa";
+echo $name[2]; // n
+
+```
+
+### menambahkan karakter pada nilai variable
+Jika kalian ingin menambahkan karakter string tanpa mengubahkan nilai variable, bisa kalian gunakan kurung kriwil `{}` 
+```php
+$myDonut = "Donut";
+echo "i have 3 {$myDonut}'s";
+
+```
