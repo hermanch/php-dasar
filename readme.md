@@ -303,3 +303,22 @@ $myDonut = "Donut";
 echo "i have 3 {$myDonut}'s";
 
 ```
+
+## Percabagan
+Hampir semuanya bahasa pemograman memppunyai fitur percabangan
+### `if statement`
+- `if statement` digunakan untuk mengembalikan statement jika suatu nilai terpenuhi (bernilai true).
+- `else` digunakan untuk mengembalikan statement jika nilai berkondisi (false).
+- sedangkan `else if` atau `elseif` digunakan jika kita mempunyai suatu kondisi bernilai (true) lebih dari satu.
+
+### Switch
+- `switch statement` digunakan jika hanya membandingkan nilai dengan `==`.
+- penggunaan lebih sederhana.
+
+### Ternary Operator
+- Sintak ini merupakan hasil sintak lebih singkat dibanding `if statement`. 
+- penggunaanya hanya dengan formula `$var ? statement1 : statement2`.
+
+### Null Coalescing Operator
+- cara ini digunakan untuk mengecek apakah sebuah data itu null atau tidak.
+- coaliscing null menggunakan tanda '??'.
