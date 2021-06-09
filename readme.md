@@ -263,3 +263,15 @@ array(2) {
   string(6) "Hanasa"
 }
 ```
+
+## Dot Operator
+Ini digunakan untuk menambahkan antara `string` dengan type data yang lain, sebenarnya bisa saja menggunakan tanda plus (+) tetapi tidak disarankan karean tanda plus (+) hanya dignakan untuk operasi matematika. Seperti Contoh berikut:
+```php
+$name = "Hanasa";
+echo "nama saya " . $name . PHP_EOL;
+
+$nilai = 100;
+echo "nilai tugas: ". $nilai . PHP_EOL;
+```
+
+_Catatan_ : `PHP_EOL` => kependekan dari *PHP End Of Line* sintak pengganti `"\n"` untuk membuat garis baru.
