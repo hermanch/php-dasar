@@ -275,3 +275,12 @@ echo "nilai tugas: ". $nilai . PHP_EOL;
 ```
 
 _Catatan_ : `PHP_EOL` => kependekan dari *PHP End Of Line* sintak pengganti `"\n"` untuk membuat garis baru.
+
+## Mengganti type data
+Terkadang kita mau mengubah type data dari inputan user misalkan user meninput data dengan type string "100" kita harus mengubahnya ke type number (int/float), kita cukup menggunakan dengan formula `(typedata)value` contoh:
+```php
+$valueStr = (string)100;
+var_dump($valueStr); // string(3) "100"
+```
+
+Kalau kita mengubah nilai yang salah, misal dari `(int)"Hanasa"` maka mengembalikan `int(0)`
