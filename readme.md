@@ -33,26 +33,24 @@ Terdapat 2 jenis tipe data number di php.
 Ketika membuat sebuah tipe data string kita bisa menggunakan cara _heredoc_ _nowdoc_
 - _heredoc_
 ```php
-<?php
 	echo <<<t
 	halo saya belajar $variable
 	Sekarang lagi belajar Typedata String
 	dan menggunkan heredoc
 	keren kan?
-	t;
-?> 
+	t; 
 ```
 
 - _nowdoc_
 ```php
-<?php
+
 	echo <<<'t' //menggunakan kutip
 	halo saya belajar PHP
 	Sekarang lagi belajar Typedata String
 	dan menggunkan heredoc
 	keren kan?
 	t;
-?> 
+
 ```
 _nowdoc_ tidak bisa memparsing data variable
 ***Silahkan buka file*** `TypeDataString.php`
@@ -300,11 +298,11 @@ echo $name[2]; // n
 Jika kalian ingin menambahkan karakter string tanpa mengubahkan nilai variable, bisa kalian gunakan kurung kriwil `{}` 
 ```php
 $myDonut = "Donut";
-echo "i have 3 {$myDonut}'s";
+echo "i have 3 {$myDonut}'s"; //i have 3 Donut's
 
 ```
 
-## Percabagan
+## Percabangan
 Hampir semuanya bahasa pemograman memppunyai fitur percabangan
 ### `if statement`
 - `if statement` digunakan untuk mengembalikan statement jika suatu nilai terpenuhi (bernilai true).
@@ -322,3 +320,35 @@ Hampir semuanya bahasa pemograman memppunyai fitur percabangan
 ### Null Coalescing Operator
 - cara ini digunakan untuk mengecek apakah sebuah data itu null atau tidak.
 - coaliscing null menggunakan tanda '??'.
+
+## Perulangan
+
+### For Loop
+- Syntak `for` digunakan untuk melalukan perulangan.
+- Blok kode yang ada didalam `For` akan terus diulangi selagi kondisi terpenuhi.
+
+```php
+for (init statement; kondisi;  post statement){
+	//block perulangan
+}
+```
+
+contoh
+```php
+for ($nilai = 1; $nilai <= 10; $nilai++){
+	echo "nilai saya $nilai".PHP_EOL;
+}
+```
+
+### While Loop
+- `while loop` perulangan versi sederhana dibanding `for`.
+- di `while loop`, hanya terdapat **kondisi** perulangan tanpa **init statement** dan **post statement**.
+
+```php
+$counter = 1;
+
+while($counter <= 10){
+	echo "ini penghitung ke-$counter" . PHP_EOL;
+	$counter++;
+}
+```
