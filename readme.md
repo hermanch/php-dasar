@@ -345,10 +345,72 @@ for ($nilai = 1; $nilai <= 10; $nilai++){
 - di `while loop`, hanya terdapat **kondisi** perulangan tanpa **init statement** dan **post statement**.
 
 ```php
-$counter = 1;
+$counter = 1; //init statement
 
-while($counter <= 10){
+while($counter <= 10){ //kondisi
 	echo "ini penghitung ke-$counter" . PHP_EOL;
-	$counter++;
+	$counter++; // post statement
 }
+```
+
+### Do While Loop
+- `Do While Loop` mirip sekali dengan perulangan dengan `while loop`. Namun perbedaanya pada pengecekan kondisi.
+- Pengecekan kondisi dilakukan setelah **perulangan** dilakukan.
+- `Do while loop` akan melakukan hasil perulangan minimal 1 kali meski kondisi bersifat false.
+```php
+$counter = 1; //init statement
+
+do{
+	echo "Ini penghitung ke-$counter" . PHP_EOL;
+	$counter++; //post statement
+} while($counter <= 10); //kondisi
+
+```
+
+### Break & Continue
+**Break** itu untuk menghentikan seluruh perulangan. Sedangkan **Continue** itu untuk menghentikan perulangan saat ini kemudian melanjutkan perulangan selanjutnya (skip).
+
+Contoh untuk `break`
+```php
+for($i = 1; true; $i++){
+	echo "ini i yang ke-$i".PHP_EOL;
+	if ($i >= 23 ){
+		break; //berhenti perulangannya jika lebih sama dengan 23
+	}
+}
+
+```
+
+Contoh untuk `Continue`
+```php
+for ($i = 0; $i < 10; $i++){
+		if($i % 2 == 0){
+		continue;
+	}
+	echo "Bilangan ke-$i".PHP_EOL;
+}
+
+```
+
+### Foreach
+`foreach` sering digunakan untuk melakukan iterasi array dari pada menggunakan `for`.
+```php
+$barang = ["Tepung", "Gula", "Garam"];
+for($i = 0; $i < count($barang); $i++){
+	echo "barang $barang[$i] masih ada dengan index ke-$i" .PHP_EOL;
+}
+
+```
+## GoTo Operator
+`goto` merupakan fitur untuk melocati sebuah kode program yang ada dibawahnya. Fitur Goto ini **jarang sekali digunakan** karena sangat membingungkan.
+Kode `goto` menggunakan sintakdengan menambahkan tanda (:) colon.
+```php
+goto a;
+echo "Hello Dunia". PHP_EOL; // diloncati
+
+a: 
+echo "Hello A". PHP_EOL;
+
+
+
 ```
