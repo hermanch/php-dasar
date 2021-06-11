@@ -492,3 +492,139 @@ $buah = ["anggur", "apel", "lengkeng", "tomat"];
 belanja(...$buah);
 
 ```
+
+## Function Return
+Secara default function tidak mengembalikan nilai apapun tetapi jika kita mau mengembalikan nilai kita bisa mengembalikan nilai dengan `return` dan dalam sebuah function kita hanya dapat mengembalikan satu nilai saja.
+```php
+function totalBelanja(int $pasar, int $parkir, int $bensin){
+	return $pasar + $parkir + $bensin;
+}
+$total = totalBelanja(24000, 3000, 5000);
+var_dump($total);
+
+
+```
+Selain itu dalam sebuah function kiat bisa menentukan typedata apa yang akan dikembalikan mau itu `string, int ataupun bool` dengan menggunakn titik dua (:).
+```php
+function sum($ang, $ka): int{ // menentukan typedata integer
+	return $ang + $ka;
+}
+
+```
+
+## Variable Function
+Vraibale function merupakan kemampuan memanggil sebuah function dari value yang terdapat di sebuah variable.
+```php
+function sayHalo(){
+	echo "Halo Semuanya" . PHP_EOL;
+}
+
+$halo = "sayHalo"; //menyimpannya ke variable
+$halo(); // memanggil dengan variable
+
+```
+
+Ada lagi selain menyimpan ke dalam variable yaitu menyimpan sebagai parameter.
+```php
+//buat function 1
+function filterFunc(string $name, $filter){
+	echo $filter($name) .PHP_EOL;
+}
+
+//buat function 2
+function sapa(string $name){
+	echo "halo $name".PHP_EOL;
+}	
+
+//panggil function 1 kemudian masukan sapa() sebagai parameter
+filterFunc("Han Han", "sapa");
+
+```
+
+## Anonimous Function
+Anonymous Function memrupakan function tanpa nama (disebut juga closure)
+```php
+$sayhello = function (string $name) {
+	echo "Helo $name" .PHP_EOL;
+}; //jangannlupa titik komanya ";"
+
+$sayhello("Hanasa");
+
+```
+
+Selain itu kita bisa mengirim function sebagai argument/parameter
+```php
+//buat function anonym
+$sapa = function ($name, $filter){
+	echo $filter($name) .PHP_EOL;
+};
+
+//panggil dan masukan function sebagai argument
+$sapa("Han Han", function (string $name) {
+	echo "Halooo $name";
+});
+
+```
+
+Kemudian untuk memanggil sebuah variable dari luar, kita harus memanggil secara `explicite` jangan lupa gunakan method `use()`.
+
+```php
+$fullName = "Han Han Hanasa";
+$sayBye = function () use($fullName){ //gunakan method use
+	echo "Good bye $fullName" .PHP_EOL;
+};
+
+```
+
+
+SILAKAN BUKA FILE `anonym-function.php`
+
+## Arrow Function
+Arrow function diperkenalkan pada php versi  7.4, Pada dasarnya sama seperti `anonymouse function` namun penulisannya lebih singkat dan juga kalau memanggil sebuah variable dari luar tanpa menggunakan `use()`.
+
+```php
+
+$firstName = "Hanasa";
+$lastName = "Sofari";
+
+
+$sayHallo = fn() => "Halo $firstName $lastName" .PHP_EOL;
+echo $sayHallo();
+
+```
+## Callback Function
+Callback merupakan sebuah cara untuk memanggil function sesuai yang yang diberikan di argument. Ada 2 cara untuk menggunakan callback yaitu:
+1. menggunakan `callable` dan `call_user_func`.
+
+```php
+
+function sayHello(string $name, callable $func){ //callable
+	$getName = call_user_func($func, $name); //call_user_func
+	echo "Hello $getName" .PHP_EOL;
+}
+
+```
+2. Menggunakan secara langsung.
+
+```php
+function sayHello(string $name, $func){
+	$getName = $func($name); //langsung panggil
+	echo "Helo $getName" .PHP_EOL;
+}
+
+```
+
+## Recursive Function
+Recursive function adalah kemampuan untuk memanggil functionnya sendiri, contohnya digunakan pada kasus factorial.
+```php
+function loop($val){
+	if ($val == 1 ){
+		return 1;
+	} else {
+		return $val * loop($val - 1); //memanggil function sendirinya
+	}
+}
+var_dump(loop(5)); 
+
+```
+Tapi harsu hati-hati saat menggunakan recursive function yaitu akan mengakibatkan kehabisan memory jika melakukan perulangan yang sangat banyak.
