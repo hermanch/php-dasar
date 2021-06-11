@@ -410,7 +410,85 @@ echo "Hello Dunia". PHP_EOL; // diloncati
 
 a: 
 echo "Hello A". PHP_EOL;
+```
 
+## Function
+Function merupakan blok kode program yang akan berjalan saat ketiak nama function tersebut dipanggil.
+formula dari function:
+```php
+function name(){ 
+	//lakukan sesuatu
+}
 
+name() //menjalankan function name
+
+```
+
+### Function argument/ parameter
+cara membuat argument dalam function sama seperti membuat sebuah `$variable`, argument bisa lebih dari satu dan harus dipisah dengan koma (,).
+```php
+function sayHello($name){
+	echo "halo $name" . PHP_EOL;
+}
+
+sayHello("Hanasa"); // halo Hanasa
+
+```
+
+### Default Argument
+Fitur ini memungkinkan kamu untuk membuat parameternya tidak diisi ketika dipanggil functionnya akan berjalan dengan baik karena memiliki nilai default.
+
+```php
+function beli($sayur = "kol"){ 
+	echo "saya telah membeli $sayur" .PHP_EOL;
+}
+beli("Tahu"); //saya telah membeli Tahu
+beli(); // saya telah membeli kol => karena ini mengambil nilai default
+
+```
+
+**Catatan**
+ketika membuat sebauh default parameter, ini harus disimpan di index terakhir.
+```php
+// SALAH
+function beli($sayur = "Kol", $buah, $bumbu){
+	echo "saya telah membeli $sayur $buah dan $bumbu" .PHP_EOL;
+}
+
+// BENAR
+function beli($sayur, $buah, $bumbu = "merica"){
+	echo "saya telah membeli $sayur $buah dan $bumbu" .PHP_EOL;
+}
+```
+
+### Type Decalaration
+Nilai pada Argument itu type datanya bersifat dinamis, kalian bisa memperlakukan secara bebas, bisa `string, int,` ataupun `bool`. Tetapi di PHP kita bisa menentukan nilainya dengan secara ketat.
+Cara ini dapat mengubah sebuah type data dari type data yang lain ke type data yang sudah ditentukan. 
+```php
+function totalBelanja(int $pasar, int $transport){ // type integer/number
+	$total = $pasar + $transport;
+	echo "total belanja saya adalah $total" .PHP_EOL;
+}
+
+totalBelanja(20000, 5000); // total 25000
+totalBelanja("20000", "5000"); // ini akan diubah dari string ke int
+```
+
+### Variable-length Argument List
+Variable-length Argument List ini memiliki kemmapuan untuk menyimpan banyak nilai, kemudian akan diubah menjadi array. Cara menggunakan dengan tanda titik tiga kali (...).
+```php
+function belanja(...$items){
+	foreach($items as $item){
+		echo "saya belanja $item" .PHP_EOL;
+	}
+}
+//tanpa membuat array
+belanja("kable", "monitor", "pulsa");
+
+//menggunakan array 
+$buah = ["anggur", "apel", "lengkeng", "tomat"];
+
+//paggil
+belanja(...$buah);
 
 ```
