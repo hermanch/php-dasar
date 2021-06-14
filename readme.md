@@ -32,6 +32,7 @@ Terdapat 2 jenis tipe data number di php.
 ### Multiline String
 Ketika membuat sebuah tipe data string kita bisa menggunakan cara _heredoc_ _nowdoc_
 - _heredoc_
+
 ```php
 	echo <<<t
 	halo saya belajar $variable
@@ -42,6 +43,7 @@ Ketika membuat sebuah tipe data string kita bisa menggunakan cara _heredoc_ _now
 ```
 
 - _nowdoc_
+
 ```php
 
 	echo <<<'t' //menggunakan kutip
