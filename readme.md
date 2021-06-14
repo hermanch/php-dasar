@@ -627,4 +627,113 @@ function loop($val){
 var_dump(loop(5)); 
 
 ```
-Tapi harsu hati-hati saat menggunakan recursive function yaitu akan mengakibatkan kehabisan memory jika melakukan perulangan yang sangat banyak.
+Tapi harus hati-hati saat menggunakan recursive function yaitu akan mengakibatkan kehabisan memory jika melakukan perulangan yang sangat banyak.
+
+## String Function
+Ada banyak sekali function atau method untuk memanipulasi sebuah string, kalian bisa lihat referensinya di [String Function](https://www.php.net/manual/en/ref.strings.php)
+```php
+$arr = [1,2,3,4,5];
+//menggabungkan string dari array
+var_dump(join(",",$arr));
+
+```
+
+## Array Function
+[Array Function](https://www.php.net/manual/en/ref.array.php)
+
+## Is Function
+Function ini digunakan untuk menengecek tipe data dari data. [Is Function](https://www.php.net/manual/en/ref.var.php).
+
+```php
+$arr = [12,"ahan", 7878];
+var_dump(is_array($arr)); // is_array()
+```
+
+## Require and Include
+PHP memiliki method untuk mengambil file php dari yang lain, ini supaya tidak bertumpuk pada satu file php.
+- `require` jika dipanggil filenya tidak ada maka terjadi error dan terhenti programnya.
+```php
+require "./lib/getName.php";
+
+echo getName("Hanasa");
+```
+
+- sedangkan `include` jika filenya tidak ada program akan tetap berjalan namun akan ada peringatan.
+```php
+include "./lib/getSum.php";
+
+echo getSum(12,3);
+```
+
+**include_once & require_once** untuk meload file hanya sekali tanpa medeklare kembali isi logic dari file tersebut sehingga menghindari error.
+```php
+//Error
+include "./lib/getSum.php";
+include "./lib/getSum.php";
+
+echo getSum(12,3);
+echo getSum(17,3);
+```
+
+```php
+include_once "./lib/getSum.php";
+include_once "./lib/getSum.php";
+
+echo getSum(12,3);
+echo getSum(17,3);
+
+```
+
+## Variable Scope
+Scope  variable adalah dibagian mana saja sebuah variable  bisa diakses, di PHP ada 3 jenis scope
+- Global
+- Lokal
+- Static
+
+### Global
+variable global ini dibuat di luar function jadi function tidak bisa mengakses varible ke dalam function.
+```php
+$name = "Hanasa";
+$umur = 23;
+function getName(){
+	echo "Halo $name dan dia berusia $umur tahun" .PHP_EOL;
+} 
+// Akan error. karena $name dan $umur bersifat global
+
+```
+
+### Lokal
+Variable ini hanya bisa diakses di dalam  function itu sendiri dan juga tidak bisa diakses oleh function lainnya.
+```php
+function sayHalo(){
+	$name = "Han Han"; //local scope
+	echo "Halooo $name" .PHP_EOL;
+}
+
+```
+
+### Static
+Static scope hanya bisa dibuat di local varible, ketika varible bersifat static maka siklus dari variable tersebut memiliki siklis yang tidak akan berhenti dan akan memiliki value yang terakhir kali diakse.
+```php
+function hitung(){
+	static $co = 1; //static
+	echo "ini hitungan ke-$co".PHP_EOL;
+
+	$co++;
+}
+hitung(); //ini hitungan ke-1
+hitung(); //ini hitungan ke-2
+
+```
+
+## Refrence
+Mengakses variable yang sama dengan nama variable yang berbeda. Saat kita mengubah isi value dari refrence, maka secara otomatis value akan berubah. Untuk melakukan refrence kita harus menggubakan tanda `&`.
+
+```php
+$name = "Han";
+$han = &$name;
+
+$han = "Hanasa";
+echo $name; // Hanasa
+
+```
