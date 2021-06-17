@@ -1,3 +1,5 @@
+![Belajar PHP](/assets/banner.jpg)
+
 # Belajar PHP Dasar
 Belajar kali ini kita tidak membutuhkan web browser untuk membuka file php tersebut, melainkan menjalankan di *terminal*.
 
