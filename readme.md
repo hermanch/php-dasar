@@ -1,6 +1,8 @@
 ![Belajar PHP](/assets/banner.jpg)
 
 # Belajar PHP Dasar
+PHP singkatan dari _Hypertext Pre-processor_, yang sebelumnya disebut _Personal Home Pages_ adalah bahasa scripting **server-side**, Bahasa pemrograman yang digunakan untuk mengembangkan situs web statis atau situs web dinamis atau aplikasi Web.
+
 Belajar kali ini kita tidak membutuhkan web browser untuk membuka file php tersebut, melainkan menjalankan di *terminal*.
 
 ## File Php
