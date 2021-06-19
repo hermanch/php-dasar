@@ -149,6 +149,18 @@ $name = [
 ]
 ```
 
+### Multi Dimensional Array
+multi-dimensional arrays atau disebut dengan nested arrays
+
+```php
+$bag = ["apple", "orange", "grape"];
+$cart = ["cucumber", "carrot", $bag];
+
+echo $cart[1] .PHP_EOL; //carrot
+echo $cart[2][1] .PHP_EOL; //Orange
+
+```
+
 ## Aritmatika
 |Operator | Keterangan |
 |---------| -------------|
